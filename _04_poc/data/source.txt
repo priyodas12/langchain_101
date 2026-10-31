@@ -1,0 +1,100 @@
+Java garbage collection automatically reclaims heap memory from objects that are no longer reachable.
+The Java Virtual Machine manages garbage collection in the background.
+An object becomes eligible for collection when no live reference can reach it.
+Garbage collection reduces the need for manual memory deallocation.
+Garbage collection does not guarantee immediate removal of unused objects.
+The heap is the main memory area managed by the garbage collector.
+The stack stores local variables and method call information.
+Objects created with new are usually allocated on the heap.
+A strong reference keeps an object alive.
+A weak reference allows an object to be collected when no strong references remain.
+A soft reference is useful for memory-sensitive caches.
+A phantom reference helps perform cleanup after an object becomes unreachable.
+The root set is the starting point for determining reachable objects.
+Local variables on active stack frames can act as garbage collection roots.
+Static fields can act as garbage collection roots.
+Active threads can keep referenced objects alive.
+Native code references can also act as garbage collection roots.
+Marking identifies objects that are still reachable.
+Sweeping removes memory occupied by unreachable objects.
+Compacting moves live objects together to reduce fragmentation.
+Memory fragmentation occurs when free heap space is scattered.
+Compaction improves the ability to allocate large objects.
+Java heap memory is commonly divided into generations.
+The young generation stores recently created objects.
+Most Java objects die shortly after they are created.
+The Eden space is where many new objects are initially allocated.
+Survivor spaces hold young objects that survive a collection.
+A minor collection focuses on the young generation.
+Minor collections are usually faster than full heap collections.
+Objects that survive long enough may move to the old generation.
+The old generation stores longer-lived objects.
+A major collection commonly targets old-generation memory.
+A full collection may involve both young and old generations.
+Full collections can cause noticeable application pauses.
+Stop-the-world means application threads pause during certain garbage collection work.
+Lower pause time is important for interactive applications.
+Higher throughput is important for batch-processing applications.
+The Serial collector uses a single thread for garbage collection.
+The Serial collector is suitable for small applications with limited memory needs.
+The Parallel collector uses multiple threads to improve throughput.
+The Parallel collector is often useful for CPU-intensive batch workloads.
+The G One collector divides the heap into many regions.
+The G One collector aims to balance pause time and throughput.
+The G One collector can reclaim selected heap regions incrementally.
+The G One collector is commonly a good general-purpose choice.
+The Z collector is designed for very low pause times.
+The Z collector performs much of its work concurrently with application threads.
+The Shenandoah collector also focuses on low pause times.
+The Shenandoah collector performs concurrent compaction.
+Concurrent collectors reduce long application pauses.
+Concurrent work may use additional CPU resources.
+Garbage collection behavior depends on application allocation patterns.
+High object allocation rates can increase collection frequency.
+Excessive temporary object creation can create memory pressure.
+Object pooling is not always beneficial in modern Java applications.
+Escape analysis may allow some objects to avoid heap allocation.
+The Just-In-Time compiler performs escape analysis when possible.
+Heap size configuration affects garbage collection behavior.
+A heap that is too small can trigger frequent collections.
+A heap that is too large can increase collection work and memory use.
+The initial heap size defines starting heap capacity.
+The maximum heap size limits how much memory the heap may use.
+Java command-line options can configure garbage collector selection.
+Garbage collection logs provide insight into memory behavior.
+GC logging helps identify long pauses and allocation pressure.
+Heap dumps capture objects currently stored in memory.
+Heap dump analysis helps locate memory leaks.
+A memory leak occurs when objects remain reachable unintentionally.
+A static collection can accidentally retain objects for the life of an application.
+Unremoved event listeners can cause memory leaks.
+Unclosed resources can contribute to memory-related problems.
+Thread-local variables can retain data longer than expected.
+Caches need eviction policies to avoid unbounded memory growth.
+Finalization should not be used for reliable resource cleanup.
+The finalize method is deprecated and should generally be avoided.
+Try-with-resources is preferred for closing files, sockets, and database connections.
+The System.gc call only requests garbage collection.
+The Java Virtual Machine may ignore an explicit garbage collection request.
+Frequent explicit garbage collection requests can harm application performance.
+Memory monitoring tools can show heap usage over time.
+Java Flight Recorder can help investigate garbage collection activity.
+Java Mission Control can visualize Java Flight Recorder data.
+VisualVM can inspect heap and memory usage.
+JConsole can provide basic Java Virtual Machine monitoring.
+The jcmd tool can request diagnostic information from a running Java process.
+The jmap tool can create heap dumps for analysis.
+The jstat tool can display garbage collection statistics.
+Promotion occurs when an object moves from young memory to old memory.
+Premature promotion can increase old-generation memory pressure.
+Survivor space sizing affects object promotion behavior.
+Large objects may be allocated directly in older memory areas.
+Humongous objects can require special handling in region-based collectors.
+Allocation failures can trigger garbage collection work.
+OutOfMemoryError occurs when Java cannot allocate required memory.
+An OutOfMemoryError does not always mean the configured heap is too small.
+A memory leak can cause OutOfMemoryError even with a large heap.
+Choosing a collector depends on latency, throughput, memory size, and workload type.
+Garbage collection tuning should be based on measurements rather than guesses.
+Garbage collection metrics should be reviewed before changing memory settings.
+Well-designed object lifecycles help reduce unnecessary garbage collection overhead.

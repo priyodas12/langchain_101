@@ -1,0 +1,35 @@
+# LangChain framework
+
+langchain                    # High-level framework for building LLM-powered applications and workflows.
+langchain-core               # Core interfaces and shared building blocks used by LangChain integrations.
+
+# OpenAI integration
+
+langchain-openai             # Connects LangChain applications to OpenAI models and embeddings.
+openai                       # Official Python SDK for calling OpenAI APIs directly.
+
+# Anthropic integration
+
+langchain-anthropic          # Connects LangChain applications to Anthropic Claude models.
+
+# Google Gemini integration
+
+google
+langchain-gemini             # LangChain integration package for working with Google Gemini models.
+langchain-google-genai       # Official LangChain integration for Google Generative AI / Gemini.
+google-generativeai          # Google’s Python SDK for accessing Gemini and Generative AI APIs.
+
+# Hugging Face integration
+
+langchain-huggingface        # Connects LangChain to Hugging Face models, embeddings, and endpoints.
+transformers                 # Hugging Face library for loading and running transformer-based ML models.
+huggingface-hub              # Python client for downloading, uploading, and managing Hugging Face Hub assets.
+
+# Environment-variable management
+
+python-dotenv                # Loads environment variables, such as API keys, from a .env file.
+
+# Machine-learning utilities
+
+numpy                        # Core library for numerical arrays and mathematical operations in Python.
+scikit-learn                 # Machine-learning toolkit for preprocessing, models, metrics, and utilities.
